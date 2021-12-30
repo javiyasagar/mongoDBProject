@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: pink;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: lightblue;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: orange;
+            outline: none;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/updateProfile" method="post" enctype="multipart/form-data">
+        <div class="container">
+            <center>
+                <h1>Edit Profile</h1>
+            </center>
+            <hr>
+            <label> Name </label>
+            <input type="text" name="name" placeholder="Enter Name" size="15" value="<%= values.name %>">
+            <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                <div style="color: red;">
+                    <%= error1 %>
+                </div>
+                <% } %>
+
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" value="<%= values.email %>">
+                    <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error2 %>
+                        </div>
+                        <% } %>
+
+                            <label> Phone Number :</label>
+                            <input type="text" name="phoneNo" placeholder="phone no." size="10"
+                                value="<%= values.phoneNo %>" />
+                            <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                                <div style="color: red;">
+                                    <%= error3 %>
+                                </div>
+                                <% } %>
+
+                                    <label> Gender :</label>
+                                    <input type="radio" value="Male" name="gender" <%=values.gender=="Male" ? 'checked'
+                                        :'' %>> Male
+                                    <input type="radio" value="Female" name="gender" <%=values.gender=="Femail"
+                                        ? 'checked' :'' %>> Female
+                                    <input type="radio" value="Other" name="gender" <%=values.gender=="Other"
+                                        ? 'checked' :'' %>> Other
+                                    <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                                        <div style="color: red;">
+                                            <%= error4 %>
+                                        </div>
+                                        <% } %>
+                                            <br>
+
+                                            <label>Image</label>
+                                            <input type="File" name="Image">
+                                            <img src="<%= values.Image %>" width="70">
+
+                                            <br>
+                                            <br>
+
+                                            <label>city</label>
+                                            <select name="city">
+                                                <option value="Ahmedabad"> Ahmedabad</option>
+                                                <option value="Ghadhinagar"> Ghadhinagar</option>
+                                                <option value="Rajkot">Rajkot</option>
+                                                <option value="Vdodra">Vdodra</option>
+                                                <option value="Morabi">Morabi</option>
+                                                <option value="patan">patan</option>
+                                            </select>
+                                            <% if (typeof error5 !=='undefined' && error5.length> 0)
+                                                { %>
+                                                <div style="color: red;">
+                                                    <%= error5 %>
+                                                </div>
+                                                <% } %>
+                                                    <br>
+                                                    <br>
+                                                    <label for="Hobby"> Hobby </label>
+                                                    <input type="checkbox" value="Cricket" id="Hobby" name="hobby"
+                                                        <%=values.hobby=="Cricket" ? 'checked' :'' %>>
+                                                    Cricket
+                                                    <input type="checkbox" value="Kabdi" id="Hobby" name="hobby"
+                                                        <%=values.hobby=="Kabdi" ? 'checked' :'' %>>
+                                                    Kabdi
+                                                    <input type="checkbox" value="Kho-Kho" id="Hobby" name="hobby"
+                                                        <%=values.hobby=="Kho-Kho" ? 'checked' :'' %>>
+                                                    Kho-Kho
+                                                    <% if (typeof error6 !=='undefined' && error6.length> 0) {
+                                                        %>
+                                                        <div style="color: red;">
+                                                            <%= error6 %>
+                                                        </div>
+                                                        <% } %>
+                                                            <br>
+
+                                                            <button type="submit" class="registerbtn"
+                                                                value="update">update</button><br>
+                                                            <br>
+                                                            <br>
+
+        </div>
+    </form>
+
+</body>
+
+</html>

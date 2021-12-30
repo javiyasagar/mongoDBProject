@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: pink;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: lightblue;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: orange;
+            outline: none;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<center>
+
+    <body>
+
+        <form action="/resetPass" method="post">
+            <div class="container">
+                <center>
+                    <h1> Reset Password</h1>
+                </center>
+                <hr>
+
+                <label for="Password"><b>Currant Password</b></label>
+                <input type="password" placeholder="Enter Current Password" name="currentPassword"
+                    value="<%= values.currentPassword %>">
+                <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                    <div style="color: red;">
+                        <%= error1 %>
+                    </div>
+                    <% } %>
+
+
+                        <label for="Password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password"
+                            value="<%= values.password %>">
+                        <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                            <div style="color: red;">
+                                <%= error2 %>
+                            </div>
+                            <% } %>
+
+
+                                <label for="Password"><b>Conform Password</b></label>
+                                <input type="password" placeholder="Enter Confirm Password" name="confirmPassword"
+                                    value="<%= values.confirmPassword %>">
+                                <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                                    <div style="color: red;">
+                                        <%= error3 %>
+                                    </div>
+                                    <% } %>
+
+
+                                        <b>
+                                            <td align="center" colspan="3">
+                                                <input type="submit" value="submit">
+                                                <!-- &nbsp;&nbsp;<input type="submit" value="reset"> -->
+                                            </td>
+                                        </b>
+
+
+                                        <!-- <button type="submit" class="registerbtn">Login</button> -->
+                                        <!-- <p class="message">Not registered? <a href="/register">Create an account</a></p>
+                <p> <a href="/forgetPassword">Forget password</a></p> -->
+
+        </form>
+
+
+    </body>
+</center>
+
+</html>
