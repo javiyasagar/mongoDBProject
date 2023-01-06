@@ -204,7 +204,6 @@ exports.forgetPassword = (req, res) => {
 exports.verifyEmail = async (req, res, next) => {
     console.log(req.body);
     try {
-
         let { error } = passwordValidat(req.body);
         console.log(error);
         if (error) {
@@ -220,6 +219,7 @@ exports.verifyEmail = async (req, res, next) => {
         const value = await user.findOne({ email: req.body.email })
         if (value) {
             sendOTP(req.body.email, otp);
+            console.log(otp);
             res.render('otp', {
                 email: req.body.email,
                 values: req.body
@@ -245,7 +245,6 @@ exports.verifyOtp = async (req, res, next) => {
 
     try {
         let { error } = otpValidate(req.body);
-        console.log(error);
         if (error) {
             console.log(error);
             if (error.details[0].context.key == 'otp') {
@@ -258,6 +257,7 @@ exports.verifyOtp = async (req, res, next) => {
         }
         logger.info(req.body.otp)
         if (otp == req.body.otp) {
+            console.log(otp);
             return res.redirect("/newPassword");
 
         } else {
@@ -414,6 +414,7 @@ exports.showProfile = async (req, res) => {
     const Email = req.user.email;
     try {
         const userValue = await user.findOne({ email: Email })
+        console.log(userValue);
         if (userValue) {
             res.render('editprofile', {
                 values: userValue
@@ -423,7 +424,6 @@ exports.showProfile = async (req, res) => {
         console.log(err)
     }
 };
-
 exports.updateProfile = async (req, res) => {
     try {
         console.log(req.body, req.file)
@@ -460,7 +460,6 @@ exports.updateProfile = async (req, res) => {
                     values: req.body
                 });
             }
-
             if (error.details[0].context.key == 'city') {
                 var err1 = error.details[0].message;
                 return res.render('editprofile', {
@@ -475,7 +474,6 @@ exports.updateProfile = async (req, res) => {
                     values: req.body
                 });
             }
-
         }
         const email = req.user.email;
         const userData = {
@@ -487,7 +485,6 @@ exports.updateProfile = async (req, res) => {
             city: req.body.city,
             hobby: req.body.hobby
         }
-
         if (req.file) {
             userData.Image = req.file.filename
         }
@@ -506,7 +503,6 @@ exports.updateProfile = async (req, res) => {
         console.log(err);
     }
 };
-
 exports.logout = async (req, res) => {
     try {
         res.clearCookie("jwt");

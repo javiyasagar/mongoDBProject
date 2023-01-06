@@ -216,3 +216,7 @@ exports.deleteData12 = async (req, res) => {
     return res.redirect('/portfolle')
 }
 
+
+
+
+

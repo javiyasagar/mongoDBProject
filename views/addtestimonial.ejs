@@ -317,50 +317,52 @@
 
 <body>
     <!-- Add Modal HTML -->
-    <form action="/api/testimonial" method="post" enctype="multipart/form-data">
-        <div class="modal-header">
-            <h4 class="modal-title">Add testimonial</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label>Testimonial Name</label>
-                <input type="text" class="form-control" name="testimonialName" value="<%= values.testimonialName %>">
-                <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error1 %>
-                    </div>
-                    <% } %>
+    <center>
+        <form action="/api/testimonial" method="post" enctype="multipart/form-data" style="width: 500px;">
+            <div class="modal-header">
+                <h4 class="modal-title" style="padding-left: 150px;">Add testimonial</h4>
             </div>
-            <div class="form-group">
-                <label>designation</label>
-                <input type="text" class="form-control" name="designation" value="<%= values.designation %>">
-                <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error2 %>
-                    </div>
-                    <% } %>
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <input type="text" class="form-control" name="description" value="<%= values.description %>">
-                <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error3 %>
-                    </div>
-                    <% } %>
-            </div>
-            <div class="form-group">
-                <label>Image</label>
-                <input type="File" name="image" value="<%= values.image %>">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Testimonial Name</label>
+                    <input type="text" class="form-control" name="testimonialName"
+                        value="<%= values.testimonialName %>">
+                    <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error1 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>designation</label>
+                    <input type="text" class="form-control" name="designation" value="<%= values.designation %>">
+                    <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error2 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="description" value="<%= values.description %>">
+                    <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error3 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="File" name="image" value="<%= values.image %>">
 
+                </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-success" value="Add">
-        </div>
-    </form>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-success" value="Add">
+            </div>
+        </form>
+    </center>
     </div>
     </div>
     </div>

@@ -316,63 +316,64 @@
 </head>
 
 <body>
-    <form action="/api/contactus/update/<%= values._id%>" method="post">
-        <div class="modal-header">
-            <h4 class="modal-title">Edit contactus</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" class="form-control" name="name" value="<%= values.name %>">
-                <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error1 %>
-                    </div>
-                    <% } %>
+    <center>
+        <form action="/api/contactus/update/<%= values._id%>" method="post" style="width: 500px;">
+            <div class="modal-header">
+                <h4 class="modal-title" style="padding-left: 150px;">Edit contactus</h4>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email" value="<%= values.email %>">
-                <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error2 %>
-                    </div>
-                    <% } %>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= values.name %>">
+                    <% if (typeof error1 !=='undefined' && error1.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error1 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" value="<%= values.email %>">
+                    <% if (typeof error2 !=='undefined' && error2.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error2 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>Massage</label>
+                    <input type="text" class="form-control" name="massage" value="<%= values.massage %>">
+                    <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error3 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>phonenumber</label>
+                    <input type="text" class="form-control" name="phonenumber" value="<%= values.phonenumber %>">
+                    <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error4 %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" name="date" value="<%= values.date %>">
+                    <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
+                        <div style="color: red;">
+                            <%= error5 %>
+                        </div>
+                        <% } %>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Massage</label>
-                <input type="text" class="form-control" name="massage" value="<%= values.massage %>">
-                <% if (typeof error3 !=='undefined' && error3.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error3 %>
-                    </div>
-                    <% } %>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-info" value="Save">
             </div>
-            <div class="form-group">
-                <label>phonenumber</label>
-                <input type="text" class="form-control" name="phonenumber" value="<%= values.phonenumber %>">
-                <% if (typeof error4 !=='undefined' && error4.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error4 %>
-                    </div>
-                    <% } %>
-            </div>
-            <div class="form-group">
-                <label>Date</label>
-                <input type="date" class="form-control" name="date" value="<%= values.date %>">
-                <% if (typeof error5 !=='undefined' && error5.length> 0) { %>
-                    <div style="color: red;">
-                        <%= error5 %>
-                    </div>
-                    <% } %>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-            <input type="submit" class="btn btn-info" value="Save">
-        </div>
-    </form>
+        </form>
+    </center>
 </body>
 
 </html>

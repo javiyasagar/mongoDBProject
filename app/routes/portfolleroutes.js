@@ -14,6 +14,6 @@ router.get('/editportfolle/:id', auth, portfolleController.editportfolle);
 router.post('/api/portfolle/update/:id', auth, upload.array('projectImage', 5), portfolleController.editData1);
 
 router.get('/api/portfolle/delete/:id', auth, portfolleController.deleteData1);
-router.get('/api/portfolle/delete', auth, portfolleController.deleteData12)
+router.get('/api/portfolle/delete', auth, portfolleController.deleteData12);
 
 module.exports = router;

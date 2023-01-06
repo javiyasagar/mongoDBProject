@@ -84,7 +84,6 @@ exports.editdata = async (req, res) => {
 
 exports.deletedata = async (req, res) => {
     console.log(req.body);
-
     const result = await categorymodel.findByIdAndDelete(req.params.id);
     if (result) {
         res.redirect('/category');
